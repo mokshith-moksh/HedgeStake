@@ -31,6 +31,8 @@ type Result = {
 };
 
 export default function Home() {
+  const [teamAName, setTeamAName] = useState("Team A");
+  const [teamBName, setTeamBName] = useState("Team B");
   const [teamAOdds, setTeamAOdds] = useState(1.65);
   const [teamBOdds, setTeamBOdds] = useState(2.05);
   const [teamAMin, setTeamAMin] = useState(1000);
@@ -96,6 +98,7 @@ export default function Home() {
         lower ratio so that the payout is balanced and potential loss is
         minimized.
       </p>
+
       <Card className="w-full">
         <CardHeader>
           <CardTitle className="text-2xl font-bold">
@@ -109,7 +112,27 @@ export default function Home() {
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="space-y-2">
-              <Label htmlFor="teamAOdds">Team A Ratio</Label>
+              <Label htmlFor="teamAName">Team A Name</Label>
+              <Input
+                id="teamAName"
+                type="text"
+                value={teamAName}
+                onChange={(e) => setTeamAName(e.target.value)}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="teamBName">Team B Name</Label>
+              <Input
+                id="teamBName"
+                type="text"
+                value={teamBName}
+                onChange={(e) => setTeamBName(e.target.value)}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="teamAOdds">{teamAName} Odds</Label>
               <Input
                 id="teamAOdds"
                 type="number"
@@ -121,7 +144,7 @@ export default function Home() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="teamBOdds">Team B Odds</Label>
+              <Label htmlFor="teamBOdds">{teamBName} Odds</Label>
               <Input
                 id="teamBOdds"
                 type="number"
@@ -133,7 +156,7 @@ export default function Home() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="teamAMin">Team A </Label>
+              <Label htmlFor="teamAMin">{teamAName} Min Stake</Label>
               <Input
                 id="teamAMin"
                 type="number"
@@ -145,7 +168,7 @@ export default function Home() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="teamAMax">Team B</Label>
+              <Label htmlFor="teamAMax">{teamAName} Max Stake</Label>
               <Input
                 id="teamAMax"
                 type="number"
@@ -200,8 +223,8 @@ export default function Home() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Team A</TableHead>
-                    <TableHead>Team B</TableHead>
+                    <TableHead>{teamAName}</TableHead>
+                    <TableHead>{teamBName}</TableHead>
                     <TableHead>1 Win Payout</TableHead>
                     <TableHead>Total Bet</TableHead>
                     <TableHead>Loss</TableHead>
