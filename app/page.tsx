@@ -91,7 +91,7 @@ export default function Home() {
 
   return (
     <main className="container mx-auto p-4 md:p-6">
-      <p>
+      <p className="mb-6">
         👉 In hedging, more stake is placed on the higher ratio and less on
         lower ratio so that the payout is balanced and potential loss is
         minimized.
