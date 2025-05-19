@@ -170,7 +170,7 @@ export default function Home() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="teamAMax">{teamAName} Max Stake</Label>
+              <Label htmlFor="teamAMax">{teamBName} Max Stake</Label>
               <Input
                 id="teamAMax"
                 type="number"
