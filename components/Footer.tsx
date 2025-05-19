@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-background border-t w-screen ">
       <div className="container px-4 py-8 mx-auto">
-        <div className="flex flex-col md:flex-row justify-evenly items-start md:items-center">
+        <div className="flex flex-col md:flex-row justify-evenly items-start md:items-center gap-8">
           {/* Brand Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">HedgeStake</h3>
